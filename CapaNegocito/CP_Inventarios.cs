@@ -53,10 +53,10 @@ namespace CapaNegocito
             return tabla;
         }
 
-        public DataTable Busqueda(string part, string codEnt, string codAnt, string desc, string est, string espe, string emp, string fech)
+        public DataTable Busqueda(string codEnt, string desc, string est, string espe)
         {
             DataTable tabla = new DataTable();
-            tabla = OCD.Busqueda( part,  codEnt, codAnt, desc, est, espe, emp,Convert.ToDateTime(fech));
+            tabla = OCD.Busqueda(codEnt, desc, est, espe);
             return tabla;
         }
 

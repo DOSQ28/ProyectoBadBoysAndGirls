@@ -255,17 +255,49 @@ namespace ProyectoBadBoysAndGirls
 
         private void txtNombre_TextChanged(object sender, EventArgs e)
         {
+            txtNombre.Text = txtNombre.Text.ToUpper();
             GeneraQR();
         }
 
         private void txtResponsable_TextChanged(object sender, EventArgs e)
         {
+            txtResponsable.Text = txtResponsable.Text.ToUpper();
             GeneraQR();
         }
 
         private void txtUbicacion_TextChanged(object sender, EventArgs e)
         {
+            txtUbicacion.Text = txtUbicacion.Text.ToUpper();
             GeneraQR();
+        }
+
+        private void texto(object sender, KeyPressEventArgs e)
+        {
+            if (!(e.KeyChar >= 65 && e.KeyChar <= 90) && !(e.KeyChar >= 97 && e.KeyChar <= 122) && !(e.KeyChar == 32) && !(e.KeyChar == 8))
+            {
+                MessageBox.Show("Ingrese solo texto", "Atencion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                // si el valor es verdadero
+                e.Handled = true;
+                // retorna el valor en el parametro
+                return;
+            }
+        }
+
+        private void txtUbicacion_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(e.KeyChar >= 65 && e.KeyChar <= 90) && !(e.KeyChar >= 97 && e.KeyChar <= 122) && !(e.KeyChar == 32) && !(e.KeyChar == 8))
+            {
+                MessageBox.Show("Ingrese solo texto", "Atencion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                // si el valor es verdadero
+                e.Handled = true;
+                // retorna el valor en el parametro
+                return;
+            }
+        }
+
+        private void exit_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

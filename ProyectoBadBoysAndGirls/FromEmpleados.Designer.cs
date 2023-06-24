@@ -37,9 +37,6 @@
             this.txtUnidad = new Guna.UI.WinForms.GunaTextBox();
             this.txtId = new Guna.UI.WinForms.GunaTextBox();
             this.gunaPanel2 = new Guna.UI.WinForms.GunaPanel();
-            this.maximizar = new System.Windows.Forms.PictureBox();
-            this.minimizar = new System.Windows.Forms.PictureBox();
-            this.exit = new System.Windows.Forms.PictureBox();
             this.txtCelular = new Guna.UI.WinForms.GunaTextBox();
             this.txtCi = new Guna.UI.WinForms.GunaTextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -72,12 +69,10 @@
             this.dgv = new System.Windows.Forms.DataGridView();
             this.btnListar = new Guna.UI.WinForms.GunaButton();
             this.btnSalir = new Guna.UI.WinForms.GunaButton();
+            this.exit = new System.Windows.Forms.PictureBox();
             this.GroupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbGuardar)).BeginInit();
             this.gunaPanel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.maximizar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.minimizar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.exit)).BeginInit();
             this.gunaPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbWord)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbPdf)).BeginInit();
@@ -86,6 +81,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBox11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.exit)).BeginInit();
             this.SuspendLayout();
             // 
             // GroupBox1
@@ -122,7 +118,7 @@
             this.CbOficina.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.CbOficina.ForeColor = System.Drawing.Color.Black;
             this.CbOficina.FormattingEnabled = true;
-            this.CbOficina.Location = new System.Drawing.Point(27, 327);
+            this.CbOficina.Location = new System.Drawing.Point(26, 337);
             this.CbOficina.Name = "CbOficina";
             this.CbOficina.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.CbOficina.OnHoverItemForeColor = System.Drawing.Color.White;
@@ -141,11 +137,11 @@
             this.CbUsuario.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.CbUsuario.ForeColor = System.Drawing.Color.Black;
             this.CbUsuario.FormattingEnabled = true;
-            this.CbUsuario.Location = new System.Drawing.Point(201, 194);
+            this.CbUsuario.Location = new System.Drawing.Point(195, 194);
             this.CbUsuario.Name = "CbUsuario";
             this.CbUsuario.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.CbUsuario.OnHoverItemForeColor = System.Drawing.Color.White;
-            this.CbUsuario.Size = new System.Drawing.Size(235, 26);
+            this.CbUsuario.Size = new System.Drawing.Size(241, 26);
             this.CbUsuario.TabIndex = 180;
             // 
             // txtUnidad
@@ -158,7 +154,7 @@
             this.txtUnidad.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.txtUnidad.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.txtUnidad.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtUnidad.Location = new System.Drawing.Point(234, 395);
+            this.txtUnidad.Location = new System.Drawing.Point(260, 404);
             this.txtUnidad.Name = "txtUnidad";
             this.txtUnidad.PasswordChar = '\0';
             this.txtUnidad.Radius = 5;
@@ -188,46 +184,14 @@
             // 
             // gunaPanel2
             // 
-            this.gunaPanel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(238)))), ((int)(((byte)(249)))));
-            this.gunaPanel2.Controls.Add(this.maximizar);
-            this.gunaPanel2.Controls.Add(this.minimizar);
+            this.gunaPanel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(50)))), ((int)(((byte)(56)))));
             this.gunaPanel2.Controls.Add(this.exit);
             this.gunaPanel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.gunaPanel2.ForeColor = System.Drawing.Color.Navy;
-            this.gunaPanel2.Location = new System.Drawing.Point(457, 0);
+            this.gunaPanel2.Location = new System.Drawing.Point(0, 0);
             this.gunaPanel2.Name = "gunaPanel2";
-            this.gunaPanel2.Size = new System.Drawing.Size(791, 39);
+            this.gunaPanel2.Size = new System.Drawing.Size(1094, 39);
             this.gunaPanel2.TabIndex = 202;
-            // 
-            // maximizar
-            // 
-            this.maximizar.Dock = System.Windows.Forms.DockStyle.Right;
-            this.maximizar.Location = new System.Drawing.Point(658, 0);
-            this.maximizar.Name = "maximizar";
-            this.maximizar.Size = new System.Drawing.Size(44, 39);
-            this.maximizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.maximizar.TabIndex = 2;
-            this.maximizar.TabStop = false;
-            // 
-            // minimizar
-            // 
-            this.minimizar.Dock = System.Windows.Forms.DockStyle.Right;
-            this.minimizar.Location = new System.Drawing.Point(702, 0);
-            this.minimizar.Name = "minimizar";
-            this.minimizar.Size = new System.Drawing.Size(44, 39);
-            this.minimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.minimizar.TabIndex = 1;
-            this.minimizar.TabStop = false;
-            // 
-            // exit
-            // 
-            this.exit.Dock = System.Windows.Forms.DockStyle.Right;
-            this.exit.Location = new System.Drawing.Point(746, 0);
-            this.exit.Name = "exit";
-            this.exit.Size = new System.Drawing.Size(45, 39);
-            this.exit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.exit.TabIndex = 0;
-            this.exit.TabStop = false;
             // 
             // txtCelular
             // 
@@ -239,7 +203,7 @@
             this.txtCelular.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.txtCelular.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.txtCelular.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtCelular.Location = new System.Drawing.Point(234, 255);
+            this.txtCelular.Location = new System.Drawing.Point(260, 255);
             this.txtCelular.Name = "txtCelular";
             this.txtCelular.PasswordChar = '\0';
             this.txtCelular.Radius = 5;
@@ -258,11 +222,11 @@
             this.txtCi.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.txtCi.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.txtCi.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtCi.Location = new System.Drawing.Point(24, 255);
+            this.txtCi.Location = new System.Drawing.Point(23, 265);
             this.txtCi.Name = "txtCi";
             this.txtCi.PasswordChar = '\0';
             this.txtCi.Radius = 5;
-            this.txtCi.Size = new System.Drawing.Size(104, 36);
+            this.txtCi.Size = new System.Drawing.Size(138, 26);
             this.txtCi.TabIndex = 176;
             this.txtCi.TextOffsetX = 4;
             this.txtCi.TextChanged += new System.EventHandler(this.txtCi_TextChanged);
@@ -272,8 +236,8 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Maiandra GD", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(226, 370);
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(190)))), ((int)(((byte)(197)))));
+            this.label2.Location = new System.Drawing.Point(256, 370);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(77, 22);
             this.label2.TabIndex = 173;
@@ -285,8 +249,8 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Maiandra GD", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(226, 230);
+            this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(190)))), ((int)(((byte)(197)))));
+            this.label9.Location = new System.Drawing.Point(256, 230);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(74, 22);
             this.label9.TabIndex = 172;
@@ -298,7 +262,7 @@
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Maiandra GD", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.ForeColor = System.Drawing.Color.White;
+            this.label12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(190)))), ((int)(((byte)(197)))));
             this.label12.Location = new System.Drawing.Point(20, 230);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(30, 22);
@@ -312,7 +276,7 @@
             this.gunaPanel3.Controls.Add(this.pbWord);
             this.gunaPanel3.Controls.Add(this.pbPdf);
             this.gunaPanel3.Controls.Add(this.pbExcel);
-            this.gunaPanel3.Location = new System.Drawing.Point(483, 487);
+            this.gunaPanel3.Location = new System.Drawing.Point(877, 500);
             this.gunaPanel3.Name = "gunaPanel3";
             this.gunaPanel3.Size = new System.Drawing.Size(194, 70);
             this.gunaPanel3.TabIndex = 200;
@@ -357,7 +321,7 @@
             // 
             // gunaPanel1
             // 
-            this.gunaPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(56)))), ((int)(((byte)(76)))));
+            this.gunaPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
             this.gunaPanel1.Controls.Add(this.CbExp);
             this.gunaPanel1.Controls.Add(this.CbOficina);
             this.gunaPanel1.Controls.Add(this.CbUsuario);
@@ -381,10 +345,9 @@
             this.gunaPanel1.Controls.Add(this.label4);
             this.gunaPanel1.Controls.Add(this.label10);
             this.gunaPanel1.Controls.Add(this.label3);
-            this.gunaPanel1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.gunaPanel1.Location = new System.Drawing.Point(0, 0);
+            this.gunaPanel1.Location = new System.Drawing.Point(0, 38);
             this.gunaPanel1.Name = "gunaPanel1";
-            this.gunaPanel1.Size = new System.Drawing.Size(457, 543);
+            this.gunaPanel1.Size = new System.Drawing.Size(457, 532);
             this.gunaPanel1.TabIndex = 201;
             this.gunaPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.gunaPanel1_Paint);
             // 
@@ -399,7 +362,7 @@
             this.CbExp.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.CbExp.ForeColor = System.Drawing.Color.Black;
             this.CbExp.FormattingEnabled = true;
-            this.CbExp.Location = new System.Drawing.Point(134, 261);
+            this.CbExp.Location = new System.Drawing.Point(167, 265);
             this.CbExp.Name = "CbExp";
             this.CbExp.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.CbExp.OnHoverItemForeColor = System.Drawing.Color.White;
@@ -418,10 +381,10 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(56)))), ((int)(((byte)(76)))));
+            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(87)))), ((int)(((byte)(97)))));
             this.label1.Font = new System.Drawing.Font("Edwardian Script ITC", 48F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(103, 6);
+            this.label1.Location = new System.Drawing.Point(103, 4);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(240, 76);
             this.label1.TabIndex = 0;
@@ -447,7 +410,7 @@
             this.txtAreadeTrabajo.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.txtAreadeTrabajo.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.txtAreadeTrabajo.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtAreadeTrabajo.Location = new System.Drawing.Point(234, 324);
+            this.txtAreadeTrabajo.Location = new System.Drawing.Point(260, 327);
             this.txtAreadeTrabajo.Name = "txtAreadeTrabajo";
             this.txtAreadeTrabajo.PasswordChar = '\0';
             this.txtAreadeTrabajo.Radius = 5;
@@ -461,8 +424,8 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Maiandra GD", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(226, 299);
+            this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(190)))), ((int)(((byte)(197)))));
+            this.label8.Location = new System.Drawing.Point(256, 299);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(158, 22);
             this.label8.TabIndex = 54;
@@ -474,8 +437,8 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Maiandra GD", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(19, 299);
+            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(190)))), ((int)(((byte)(197)))));
+            this.label7.Location = new System.Drawing.Point(22, 312);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(77, 22);
             this.label7.TabIndex = 52;
@@ -493,11 +456,11 @@
             this.txtCargo.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.txtCargo.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.txtCargo.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtCargo.Location = new System.Drawing.Point(24, 184);
+            this.txtCargo.Location = new System.Drawing.Point(24, 194);
             this.txtCargo.Name = "txtCargo";
             this.txtCargo.PasswordChar = '\0';
             this.txtCargo.Radius = 5;
-            this.txtCargo.Size = new System.Drawing.Size(160, 36);
+            this.txtCargo.Size = new System.Drawing.Size(149, 26);
             this.txtCargo.TabIndex = 47;
             this.txtCargo.TextOffsetX = 4;
             this.txtCargo.TextChanged += new System.EventHandler(this.txtCargo_TextChanged);
@@ -513,7 +476,7 @@
             this.txtProfesion.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.txtProfesion.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.txtProfesion.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtProfesion.Location = new System.Drawing.Point(231, 117);
+            this.txtProfesion.Location = new System.Drawing.Point(254, 117);
             this.txtProfesion.Name = "txtProfesion";
             this.txtProfesion.PasswordChar = '\0';
             this.txtProfesion.Radius = 5;
@@ -537,7 +500,7 @@
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.PasswordChar = '\0';
             this.txtNombre.Radius = 5;
-            this.txtNombre.Size = new System.Drawing.Size(160, 36);
+            this.txtNombre.Size = new System.Drawing.Size(224, 36);
             this.txtNombre.TabIndex = 45;
             this.txtNombre.TextOffsetX = 4;
             this.txtNombre.TextChanged += new System.EventHandler(this.txtNombre_TextChanged_1);
@@ -546,7 +509,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Maiandra GD", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.White;
+            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(190)))), ((int)(((byte)(197)))));
             this.label5.Location = new System.Drawing.Point(227, 159);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(80, 22);
@@ -559,8 +522,8 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Maiandra GD", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(226, 92);
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(190)))), ((int)(((byte)(197)))));
+            this.label4.Location = new System.Drawing.Point(250, 92);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(96, 22);
             this.label4.TabIndex = 31;
@@ -572,8 +535,8 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Maiandra GD", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.Color.White;
-            this.label10.Location = new System.Drawing.Point(20, 159);
+            this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(190)))), ((int)(((byte)(197)))));
+            this.label10.Location = new System.Drawing.Point(22, 159);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(64, 22);
             this.label10.TabIndex = 40;
@@ -585,7 +548,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Maiandra GD", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(190)))), ((int)(((byte)(197)))));
             this.label3.Location = new System.Drawing.Point(20, 92);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(85, 22);
@@ -613,7 +576,7 @@
             this.btnNuevo.ForeColor = System.Drawing.Color.PaleTurquoise;
             this.btnNuevo.Image = ((System.Drawing.Image)(resources.GetObject("btnNuevo.Image")));
             this.btnNuevo.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnNuevo.Location = new System.Drawing.Point(475, 293);
+            this.btnNuevo.Location = new System.Drawing.Point(676, 62);
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
             this.btnNuevo.OnHoverBorderColor = System.Drawing.Color.Brown;
@@ -641,7 +604,7 @@
             this.btnEliminar.ForeColor = System.Drawing.Color.PaleTurquoise;
             this.btnEliminar.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminar.Image")));
             this.btnEliminar.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnEliminar.Location = new System.Drawing.Point(475, 341);
+            this.btnEliminar.Location = new System.Drawing.Point(877, 110);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
             this.btnEliminar.OnHoverBorderColor = System.Drawing.Color.Brown;
@@ -669,7 +632,7 @@
             this.btnEditar.ForeColor = System.Drawing.Color.PaleTurquoise;
             this.btnEditar.Image = ((System.Drawing.Image)(resources.GetObject("btnEditar.Image")));
             this.btnEditar.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnEditar.Location = new System.Drawing.Point(475, 245);
+            this.btnEditar.Location = new System.Drawing.Point(676, 110);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
             this.btnEditar.OnHoverBorderColor = System.Drawing.Color.Brown;
@@ -677,7 +640,7 @@
             this.btnEditar.OnHoverImage = null;
             this.btnEditar.OnPressedColor = System.Drawing.Color.Black;
             this.btnEditar.Radius = 5;
-            this.btnEditar.Size = new System.Drawing.Size(195, 42);
+            this.btnEditar.Size = new System.Drawing.Size(195, 48);
             this.btnEditar.TabIndex = 197;
             this.btnEditar.Text = "Editar";
             this.btnEditar.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -697,7 +660,7 @@
             this.btnGuardar.ForeColor = System.Drawing.Color.PaleTurquoise;
             this.btnGuardar.Image = ((System.Drawing.Image)(resources.GetObject("btnGuardar.Image")));
             this.btnGuardar.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnGuardar.Location = new System.Drawing.Point(475, 197);
+            this.btnGuardar.Location = new System.Drawing.Point(877, 62);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
             this.btnGuardar.OnHoverBorderColor = System.Drawing.Color.Brown;
@@ -714,10 +677,10 @@
             // dgv
             // 
             this.dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv.Location = new System.Drawing.Point(701, 45);
+            this.dgv.Location = new System.Drawing.Point(463, 225);
             this.dgv.Name = "dgv";
             this.dgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv.Size = new System.Drawing.Size(535, 420);
+            this.dgv.Size = new System.Drawing.Size(609, 269);
             this.dgv.TabIndex = 204;
             this.dgv.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Listar);
             // 
@@ -735,7 +698,7 @@
             this.btnListar.ForeColor = System.Drawing.Color.PaleTurquoise;
             this.btnListar.Image = ((System.Drawing.Image)(resources.GetObject("btnListar.Image")));
             this.btnListar.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnListar.Location = new System.Drawing.Point(474, 395);
+            this.btnListar.Location = new System.Drawing.Point(877, 171);
             this.btnListar.Name = "btnListar";
             this.btnListar.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
             this.btnListar.OnHoverBorderColor = System.Drawing.Color.Brown;
@@ -763,7 +726,7 @@
             this.btnSalir.ForeColor = System.Drawing.Color.PaleTurquoise;
             this.btnSalir.Image = ((System.Drawing.Image)(resources.GetObject("btnSalir.Image")));
             this.btnSalir.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnSalir.Location = new System.Drawing.Point(474, 443);
+            this.btnSalir.Location = new System.Drawing.Point(676, 171);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
             this.btnSalir.OnHoverBorderColor = System.Drawing.Color.Brown;
@@ -773,15 +736,28 @@
             this.btnSalir.Radius = 5;
             this.btnSalir.Size = new System.Drawing.Size(195, 48);
             this.btnSalir.TabIndex = 206;
-            this.btnSalir.Text = "Eliminar";
+            this.btnSalir.Text = "Salir";
             this.btnSalir.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
+            // 
+            // exit
+            // 
+            this.exit.Dock = System.Windows.Forms.DockStyle.Right;
+            this.exit.Image = global::ProyectoBadBoysAndGirls.Properties.Resources.boton;
+            this.exit.Location = new System.Drawing.Point(1049, 0);
+            this.exit.Name = "exit";
+            this.exit.Size = new System.Drawing.Size(45, 39);
+            this.exit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.exit.TabIndex = 1;
+            this.exit.TabStop = false;
+            this.exit.Click += new System.EventHandler(this.exit_Click);
             // 
             // FromEmpleados
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1248, 543);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(117)))), ((int)(((byte)(130)))));
+            this.ClientSize = new System.Drawing.Size(1094, 570);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnListar);
             this.Controls.Add(this.dgv);
@@ -795,14 +771,12 @@
             this.Controls.Add(this.gunaPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FromEmpleados";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.WindowsDefaultBounds;
             this.Text = "FromEmpleados";
             this.Load += new System.EventHandler(this.FromEmpleados_Load);
             this.GroupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pbGuardar)).EndInit();
             this.gunaPanel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.maximizar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.minimizar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.exit)).EndInit();
             this.gunaPanel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pbWord)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbPdf)).EndInit();
@@ -812,6 +786,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBox11)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.exit)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -826,9 +801,6 @@
         private Guna.UI.WinForms.GunaTextBox txtUnidad;
         private Guna.UI.WinForms.GunaTextBox txtId;
         private Guna.UI.WinForms.GunaPanel gunaPanel2;
-        private System.Windows.Forms.PictureBox maximizar;
-        private System.Windows.Forms.PictureBox minimizar;
-        private System.Windows.Forms.PictureBox exit;
         private Guna.UI.WinForms.GunaTextBox txtCelular;
         private Guna.UI.WinForms.GunaTextBox txtCi;
         private System.Windows.Forms.Label label2;
@@ -860,5 +832,6 @@
         private Guna.UI.WinForms.GunaTransfarantPictureBox pbGuardar;
         private Guna.UI.WinForms.GunaButton btnSalir;
         private Guna.UI.WinForms.GunaButton btnListar;
+        private System.Windows.Forms.PictureBox exit;
     }
 }

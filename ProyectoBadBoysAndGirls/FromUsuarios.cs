@@ -38,10 +38,10 @@ namespace ProyectoBadBoysAndGirls
             CP_Usuarios OCPG = new CP_Usuarios();
             dgv.DataSource = OCPG.MostrarUsuario();
         }
-        
+
         public void GeneraQR()
         {
-            string txt = txtNombre.Text;
+            string txt = txtCi.Text+"  "+ txtNombre.Text+"  "+txtPaterno.Text + "  " + txtxMaterno.Text + "  " + txtCargo.Text + "  " + txtProfesion.Text + "  " + txtUsuario.Text + "  " + txtContraseña.Text + "  " + txtId.Text;
             if (txt != "")
             {
                 BarcodeWriter br = new BarcodeWriter();
@@ -289,6 +289,124 @@ namespace ProyectoBadBoysAndGirls
                 dgv.DataSource = OCPG.MostrarUsuarioDescendente();
                 btnListar.Text = "Lista Ascendente";
             }
+        }
+
+        private void txtCi_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+            if (!(e.KeyChar >= 48 && e.KeyChar <= 57) && !(e.KeyChar == 127) && !(e.KeyChar == 8))
+            {
+                MessageBox.Show("Ingrese solo números", "Atencion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                // si el valor es verdadero
+                e.Handled = true;
+                // retorna el valor en el parametro
+                return;
+            }
+        }
+
+        private void txtNombre_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(e.KeyChar >= 65 && e.KeyChar <= 90) && !(e.KeyChar >= 97 && e.KeyChar <= 122) && !(e.KeyChar == 32) && !(e.KeyChar == 8))
+            {
+                MessageBox.Show("Ingrese solo texto", "Atencion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                // si el valor es verdadero
+                e.Handled = true;
+                // retorna el valor en el parametro
+                return;
+            }
+        }
+
+        private void txtPaterno_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(e.KeyChar >= 65 && e.KeyChar <= 90) && !(e.KeyChar >= 97 && e.KeyChar <= 122) && !(e.KeyChar == 32) && !(e.KeyChar == 8))
+            {
+                MessageBox.Show("Ingrese solo texto", "Atencion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                // si el valor es verdadero
+                e.Handled = true;
+                // retorna el valor en el parametro
+                return;
+            }
+        }
+
+        private void txtxMaterno_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(e.KeyChar >= 65 && e.KeyChar <= 90) && !(e.KeyChar >= 97 && e.KeyChar <= 122) && !(e.KeyChar == 32) && !(e.KeyChar == 8))
+            {
+                MessageBox.Show("Ingrese solo texto", "Atencion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                // si el valor es verdadero
+                e.Handled = true;
+                // retorna el valor en el parametro
+                return;
+            }
+        }
+
+        private void txtProfesion_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(e.KeyChar >= 65 && e.KeyChar <= 90) && !(e.KeyChar >= 97 && e.KeyChar <= 122) && !(e.KeyChar == 32) && !(e.KeyChar == 8))
+            {
+                MessageBox.Show("Ingrese solo texto", "Atencion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                // si el valor es verdadero
+                e.Handled = true;
+                // retorna el valor en el parametro
+                return;
+            }
+        }
+
+        private void txtCargo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(e.KeyChar >= 65 && e.KeyChar <= 90) && !(e.KeyChar >= 97 && e.KeyChar <= 122) && !(e.KeyChar == 32) && !(e.KeyChar == 8))
+            {
+                MessageBox.Show("Ingrese solo texto", "Atencion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                // si el valor es verdadero
+                e.Handled = true;
+                // retorna el valor en el parametro
+                return;
+            }
+        }
+
+        private void txtCi_TextChanged(object sender, EventArgs e)
+        {
+            GeneraQR();            
+        }
+
+        private void txtNombre_TextChanged(object sender, EventArgs e)
+        {
+            txtNombre.Text = txtNombre.Text.ToUpper();
+            txtNombre.Select(txtNombre.Text.Length, 0);
+            GeneraQR();
+        }
+
+        private void txtPaterno_TextChanged(object sender, EventArgs e)
+        {
+            txtPaterno.Text = txtPaterno.Text.ToUpper();
+            txtPaterno.Select(txtNombre.Text.Length, 0);
+            GeneraQR();
+        }
+
+        private void txtxMaterno_TextChanged(object sender, EventArgs e)
+        {
+            txtxMaterno.Text = txtxMaterno.Text.ToUpper();
+            txtxMaterno.Select(txtxMaterno.Text.Length, 0);
+            GeneraQR();
+        }
+
+        private void txtProfesion_TextChanged(object sender, EventArgs e)
+        {
+            txtProfesion.Text = txtProfesion.Text.ToUpper();
+            txtProfesion.Select(txtProfesion.Text.Length, 0);
+            GeneraQR();
+        }
+
+        private void txtCargo_TextChanged(object sender, EventArgs e)
+        {
+            txtCargo.Text = txtCargo.Text.ToUpper();
+            txtCargo.Select(txtCargo.Text.Length, 0);
+            GeneraQR();
+        }
+
+        private void exit_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

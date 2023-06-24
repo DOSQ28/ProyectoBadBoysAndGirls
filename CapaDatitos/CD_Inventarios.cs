@@ -47,11 +47,11 @@ namespace CapaDatitos
             return tabla;
         }
 
-        public DataTable Busqueda(string part, string codEnt, string codAnt, string desc, string est,string espe,string emp,DateTime fech)
+        public DataTable Busqueda(string codEnt, string desc, string est,string espe)
         {
             //transac sql
             comando.Connection = conn.AbrirConexion();
-            comando.CommandText = "SELECT TOP(100) * FROM INVENTARIOS WHERE PARTIDA LIKE '' OR COD_ENTIDAD LIKE '' OR COD_ANTIGUO LIKE '' OR DESCRIPCION LIKE '%EXTENCION%' OR ESTADO LIKE '' OR ESPECIFICA LIKE '' OR EMP_NO LIKE '' OR FECHA_INGRESO LIKE ''";
+            comando.CommandText = "SELECT TOP(100) * FROM INVENTARIOS WHERE AUXILIAR LIKE '"+ codEnt + "' OR COD_ENTIDAD LIKE '"+ desc + "' OR DESCRIPCION LIKE '"+ est + "' OR ESTADO LIKE '"+ espe + "' ";
             leer = comando.ExecuteReader();
             tabla.Load(leer);
             conn.CerrarConexion();

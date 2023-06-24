@@ -34,7 +34,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FromUsuarios));
             this.GunaElipse1 = new Guna.UI.WinForms.GunaElipse(this.components);
-            this.limpiar = new System.Windows.Forms.PictureBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.txtBuscarusuarios = new System.Windows.Forms.TextBox();
@@ -55,26 +54,24 @@
             this.txtUsuario = new Guna.UI.WinForms.GunaTextBox();
             this.txtProfesion = new Guna.UI.WinForms.GunaTextBox();
             this.btnGuardar = new Guna.UI.WinForms.GunaButton();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.txtCargo = new Guna.UI.WinForms.GunaTextBox();
+            this.txtId = new System.Windows.Forms.TextBox();
             this.txtxMaterno = new Guna.UI.WinForms.GunaTextBox();
             this.txtPaterno = new Guna.UI.WinForms.GunaTextBox();
             this.txtNombre = new Guna.UI.WinForms.GunaTextBox();
+            this.txtCi = new Guna.UI.WinForms.GunaTextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.dgv = new System.Windows.Forms.DataGridView();
             this.btnNuevo = new Guna.UI.WinForms.GunaButton();
-            this.txtCi = new Guna.UI.WinForms.GunaTextBox();
-            this.txtId = new System.Windows.Forms.TextBox();
-            this.txtCargo = new Guna.UI.WinForms.GunaTextBox();
             this.btnEli = new Guna.UI.WinForms.GunaButton();
             this.btnListar = new Guna.UI.WinForms.GunaButton();
             this.btnSalir = new Guna.UI.WinForms.GunaButton();
-            ((System.ComponentModel.ISupportInitialize)(this.limpiar)).BeginInit();
             this.gunaPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBox11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.exit)).BeginInit();
@@ -84,7 +81,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbExcel)).BeginInit();
             this.GroupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbGuardar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
@@ -95,21 +91,12 @@
             this.GunaElipse1.Radius = 10;
             this.GunaElipse1.TargetControl = this;
             // 
-            // limpiar
-            // 
-            this.limpiar.Location = new System.Drawing.Point(425, 171);
-            this.limpiar.Name = "limpiar";
-            this.limpiar.Size = new System.Drawing.Size(70, 59);
-            this.limpiar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.limpiar.TabIndex = 192;
-            this.limpiar.TabStop = false;
-            // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Lucida Fax", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(260, 394);
+            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(190)))), ((int)(((byte)(197)))));
+            this.label7.Location = new System.Drawing.Point(246, 336);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(74, 18);
             this.label7.TabIndex = 186;
@@ -121,8 +108,8 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Lucida Fax", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(29, 394);
+            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(190)))), ((int)(((byte)(197)))));
+            this.label6.Location = new System.Drawing.Point(15, 336);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(87, 18);
             this.label6.TabIndex = 184;
@@ -155,7 +142,6 @@
             this.gunaPanel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(42)))), ((int)(((byte)(71)))));
             this.gunaPanel2.Controls.Add(this.PictureBox11);
             this.gunaPanel2.Controls.Add(this.exit);
-            this.gunaPanel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.gunaPanel2.ForeColor = System.Drawing.Color.Navy;
             this.gunaPanel2.Location = new System.Drawing.Point(0, 0);
             this.gunaPanel2.Name = "gunaPanel2";
@@ -182,6 +168,7 @@
             this.exit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.exit.TabIndex = 0;
             this.exit.TabStop = false;
+            this.exit.Click += new System.EventHandler(this.exit_Click);
             // 
             // gunaPanel3
             // 
@@ -231,7 +218,7 @@
             this.GroupBox1.Controls.Add(this.pbGuardar);
             this.GroupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.GroupBox1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.GroupBox1.Location = new System.Drawing.Point(342, 14);
+            this.GroupBox1.Location = new System.Drawing.Point(339, 19);
             this.GroupBox1.Margin = new System.Windows.Forms.Padding(0);
             this.GroupBox1.Name = "GroupBox1";
             this.GroupBox1.Padding = new System.Windows.Forms.Padding(0);
@@ -284,7 +271,7 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Comic Sans MS", 27.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(238)))), ((int)(((byte)(249)))));
-            this.label1.Location = new System.Drawing.Point(161, 39);
+            this.label1.Location = new System.Drawing.Point(12, 19);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(153, 52);
             this.label1.TabIndex = 172;
@@ -300,7 +287,7 @@
             this.txtContraseña.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.txtContraseña.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.txtContraseña.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtContraseña.Location = new System.Drawing.Point(264, 333);
+            this.txtContraseña.Location = new System.Drawing.Point(237, 275);
             this.txtContraseña.Name = "txtContraseña";
             this.txtContraseña.PasswordChar = '\0';
             this.txtContraseña.Radius = 5;
@@ -312,8 +299,8 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Lucida Fax", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(260, 308);
+            this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(190)))), ((int)(((byte)(197)))));
+            this.label8.Location = new System.Drawing.Point(246, 250);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(105, 18);
             this.label8.TabIndex = 188;
@@ -331,9 +318,9 @@
             this.txtUsuario.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.txtUsuario.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.txtUsuario.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtUsuario.Location = new System.Drawing.Point(263, 419);
+            this.txtUsuario.Location = new System.Drawing.Point(237, 371);
             this.txtUsuario.Name = "txtUsuario";
-            this.txtUsuario.PasswordChar = '\0';
+            this.txtUsuario.PasswordChar = '*';
             this.txtUsuario.Radius = 5;
             this.txtUsuario.Size = new System.Drawing.Size(191, 38);
             this.txtUsuario.TabIndex = 187;
@@ -349,13 +336,15 @@
             this.txtProfesion.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.txtProfesion.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.txtProfesion.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtProfesion.Location = new System.Drawing.Point(35, 415);
+            this.txtProfesion.Location = new System.Drawing.Point(12, 371);
             this.txtProfesion.Name = "txtProfesion";
             this.txtProfesion.PasswordChar = '\0';
             this.txtProfesion.Radius = 5;
             this.txtProfesion.Size = new System.Drawing.Size(191, 38);
             this.txtProfesion.TabIndex = 185;
             this.txtProfesion.TextOffsetX = 4;
+            this.txtProfesion.TextChanged += new System.EventHandler(this.txtProfesion_TextChanged);
+            this.txtProfesion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtProfesion_KeyPress);
             // 
             // btnGuardar
             // 
@@ -386,16 +375,6 @@
             this.btnGuardar.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::ProyectoBadBoysAndGirls.Properties.Resources.carita1;
-            this.pictureBox1.Location = new System.Drawing.Point(12, 14);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(125, 100);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 173;
-            this.pictureBox1.TabStop = false;
-            // 
             // pictureBox4
             // 
             this.pictureBox4.BackColor = System.Drawing.Color.White;
@@ -412,8 +391,8 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Lucida Fax", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(32, 474);
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(190)))), ((int)(((byte)(197)))));
+            this.label3.Location = new System.Drawing.Point(18, 432);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(59, 18);
             this.label3.TabIndex = 183;
@@ -426,12 +405,10 @@
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(56)))), ((int)(((byte)(95)))));
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(71)))), ((int)(((byte)(79)))));
             this.panel1.Controls.Add(this.txtCargo);
             this.panel1.Controls.Add(this.txtId);
-            this.panel1.Controls.Add(this.limpiar);
             this.panel1.Controls.Add(this.GroupBox1);
-            this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.txtContraseña);
             this.panel1.Controls.Add(this.label8);
@@ -450,8 +427,35 @@
             this.panel1.Controls.Add(this.label9);
             this.panel1.Location = new System.Drawing.Point(0, 31);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(517, 565);
+            this.panel1.Size = new System.Drawing.Size(508, 565);
             this.panel1.TabIndex = 224;
+            // 
+            // txtCargo
+            // 
+            this.txtCargo.BackColor = System.Drawing.Color.Transparent;
+            this.txtCargo.BaseColor = System.Drawing.Color.White;
+            this.txtCargo.BorderColor = System.Drawing.Color.Silver;
+            this.txtCargo.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtCargo.FocusedBaseColor = System.Drawing.Color.White;
+            this.txtCargo.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.txtCargo.FocusedForeColor = System.Drawing.SystemColors.ControlText;
+            this.txtCargo.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtCargo.Location = new System.Drawing.Point(18, 453);
+            this.txtCargo.Name = "txtCargo";
+            this.txtCargo.PasswordChar = '\0';
+            this.txtCargo.Radius = 5;
+            this.txtCargo.Size = new System.Drawing.Size(333, 38);
+            this.txtCargo.TabIndex = 196;
+            this.txtCargo.TextOffsetX = 4;
+            this.txtCargo.TextChanged += new System.EventHandler(this.txtCargo_TextChanged);
+            this.txtCargo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCargo_KeyPress);
+            // 
+            // txtId
+            // 
+            this.txtId.Location = new System.Drawing.Point(171, 39);
+            this.txtId.Name = "txtId";
+            this.txtId.Size = new System.Drawing.Size(100, 20);
+            this.txtId.TabIndex = 195;
             // 
             // txtxMaterno
             // 
@@ -463,13 +467,15 @@
             this.txtxMaterno.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.txtxMaterno.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.txtxMaterno.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtxMaterno.Location = new System.Drawing.Point(32, 333);
+            this.txtxMaterno.Location = new System.Drawing.Point(18, 275);
             this.txtxMaterno.Name = "txtxMaterno";
             this.txtxMaterno.PasswordChar = '\0';
             this.txtxMaterno.Radius = 5;
             this.txtxMaterno.Size = new System.Drawing.Size(191, 38);
             this.txtxMaterno.TabIndex = 182;
             this.txtxMaterno.TextOffsetX = 4;
+            this.txtxMaterno.TextChanged += new System.EventHandler(this.txtxMaterno_TextChanged);
+            this.txtxMaterno.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtxMaterno_KeyPress);
             // 
             // txtPaterno
             // 
@@ -481,13 +487,15 @@
             this.txtPaterno.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.txtPaterno.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.txtPaterno.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtPaterno.Location = new System.Drawing.Point(266, 248);
+            this.txtPaterno.Location = new System.Drawing.Point(237, 199);
             this.txtPaterno.Name = "txtPaterno";
             this.txtPaterno.PasswordChar = '\0';
             this.txtPaterno.Radius = 5;
             this.txtPaterno.Size = new System.Drawing.Size(191, 38);
             this.txtPaterno.TabIndex = 181;
             this.txtPaterno.TextOffsetX = 4;
+            this.txtPaterno.TextChanged += new System.EventHandler(this.txtPaterno_TextChanged);
+            this.txtPaterno.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPaterno_KeyPress);
             // 
             // txtNombre
             // 
@@ -499,20 +507,42 @@
             this.txtNombre.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.txtNombre.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.txtNombre.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtNombre.Location = new System.Drawing.Point(31, 248);
+            this.txtNombre.Location = new System.Drawing.Point(12, 199);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.PasswordChar = '\0';
             this.txtNombre.Radius = 5;
             this.txtNombre.Size = new System.Drawing.Size(191, 38);
             this.txtNombre.TabIndex = 180;
             this.txtNombre.TextOffsetX = 4;
+            this.txtNombre.TextChanged += new System.EventHandler(this.txtNombre_TextChanged);
+            this.txtNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombre_KeyPress);
+            // 
+            // txtCi
+            // 
+            this.txtCi.BackColor = System.Drawing.Color.Transparent;
+            this.txtCi.BaseColor = System.Drawing.Color.White;
+            this.txtCi.BorderColor = System.Drawing.Color.Silver;
+            this.txtCi.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtCi.FocusedBaseColor = System.Drawing.Color.White;
+            this.txtCi.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.txtCi.FocusedForeColor = System.Drawing.SystemColors.ControlText;
+            this.txtCi.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtCi.Location = new System.Drawing.Point(80, 101);
+            this.txtCi.Name = "txtCi";
+            this.txtCi.PasswordChar = '\0';
+            this.txtCi.Radius = 5;
+            this.txtCi.Size = new System.Drawing.Size(240, 38);
+            this.txtCi.TabIndex = 179;
+            this.txtCi.TextOffsetX = 4;
+            this.txtCi.TextChanged += new System.EventHandler(this.txtCi_TextChanged);
+            this.txtCi.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCi_KeyPress);
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Lucida Fax", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(28, 308);
+            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(190)))), ((int)(((byte)(197)))));
+            this.label5.Location = new System.Drawing.Point(14, 250);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(78, 18);
             this.label5.TabIndex = 175;
@@ -524,8 +554,8 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Lucida Fax", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(25, 223);
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(190)))), ((int)(((byte)(197)))));
+            this.label4.Location = new System.Drawing.Point(17, 157);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(74, 18);
             this.label4.TabIndex = 174;
@@ -537,8 +567,8 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Lucida Fax", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.Color.White;
-            this.label10.Location = new System.Drawing.Point(260, 223);
+            this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(190)))), ((int)(((byte)(197)))));
+            this.label10.Location = new System.Drawing.Point(234, 157);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(73, 18);
             this.label10.TabIndex = 177;
@@ -550,8 +580,8 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Lucida Fax", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(25, 146);
+            this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(190)))), ((int)(((byte)(197)))));
+            this.label9.Location = new System.Drawing.Point(36, 111);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(26, 18);
             this.label9.TabIndex = 176;
@@ -619,7 +649,7 @@
             this.btnNuevo.ForeColor = System.Drawing.Color.PaleTurquoise;
             this.btnNuevo.Image = ((System.Drawing.Image)(resources.GetObject("btnNuevo.Image")));
             this.btnNuevo.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnNuevo.Location = new System.Drawing.Point(524, 117);
+            this.btnNuevo.Location = new System.Drawing.Point(523, 122);
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.OnHoverBaseColor = System.Drawing.Color.DodgerBlue;
             this.btnNuevo.OnHoverBorderColor = System.Drawing.Color.Aqua;
@@ -632,49 +662,6 @@
             this.btnNuevo.Text = "Nuevo";
             this.btnNuevo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
-            // 
-            // txtCi
-            // 
-            this.txtCi.BackColor = System.Drawing.Color.Transparent;
-            this.txtCi.BaseColor = System.Drawing.Color.White;
-            this.txtCi.BorderColor = System.Drawing.Color.Silver;
-            this.txtCi.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtCi.FocusedBaseColor = System.Drawing.Color.White;
-            this.txtCi.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.txtCi.FocusedForeColor = System.Drawing.SystemColors.ControlText;
-            this.txtCi.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtCi.Location = new System.Drawing.Point(28, 171);
-            this.txtCi.Name = "txtCi";
-            this.txtCi.PasswordChar = '\0';
-            this.txtCi.Radius = 5;
-            this.txtCi.Size = new System.Drawing.Size(191, 38);
-            this.txtCi.TabIndex = 179;
-            this.txtCi.TextOffsetX = 4;
-            // 
-            // txtId
-            // 
-            this.txtId.Location = new System.Drawing.Point(37, 123);
-            this.txtId.Name = "txtId";
-            this.txtId.Size = new System.Drawing.Size(100, 20);
-            this.txtId.TabIndex = 195;
-            // 
-            // txtCargo
-            // 
-            this.txtCargo.BackColor = System.Drawing.Color.Transparent;
-            this.txtCargo.BaseColor = System.Drawing.Color.White;
-            this.txtCargo.BorderColor = System.Drawing.Color.Silver;
-            this.txtCargo.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtCargo.FocusedBaseColor = System.Drawing.Color.White;
-            this.txtCargo.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.txtCargo.FocusedForeColor = System.Drawing.SystemColors.ControlText;
-            this.txtCargo.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtCargo.Location = new System.Drawing.Point(35, 498);
-            this.txtCargo.Name = "txtCargo";
-            this.txtCargo.PasswordChar = '\0';
-            this.txtCargo.Radius = 5;
-            this.txtCargo.Size = new System.Drawing.Size(316, 38);
-            this.txtCargo.TabIndex = 196;
-            this.txtCargo.TextOffsetX = 4;
             // 
             // btnEli
             // 
@@ -767,6 +754,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(117)))), ((int)(((byte)(130)))));
             this.ClientSize = new System.Drawing.Size(959, 563);
             this.Controls.Add(this.btnListar);
             this.Controls.Add(this.btnSalir);
@@ -783,9 +771,9 @@
             this.Controls.Add(this.btnNuevo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FromUsuarios";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "index";
             this.Load += new System.EventHandler(this.index_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.limpiar)).EndInit();
             this.gunaPanel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.PictureBox11)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.exit)).EndInit();
@@ -795,7 +783,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbExcel)).EndInit();
             this.GroupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pbGuardar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -821,10 +808,8 @@
         private Guna.UI.WinForms.GunaButton btnGuardar;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.PictureBox limpiar;
         internal System.Windows.Forms.GroupBox GroupBox1;
         internal System.Windows.Forms.PictureBox pbGuardar;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
         private Guna.UI.WinForms.GunaTextBox txtContraseña;
         private System.Windows.Forms.Label label8;

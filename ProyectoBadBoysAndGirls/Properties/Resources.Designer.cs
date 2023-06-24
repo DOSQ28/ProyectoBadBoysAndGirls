@@ -63,9 +63,39 @@ namespace ProyectoBadBoysAndGirls.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap agregar_contacto {
+            get {
+                object obj = ResourceManager.GetObject("agregar-contacto", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap badboysgirls {
             get {
                 object obj = ResourceManager.GetObject("badboysgirls", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap badboysgirls1 {
+            get {
+                object obj = ResourceManager.GetObject("badboysgirls1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap bg1 {
+            get {
+                object obj = ResourceManager.GetObject("bg1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -93,6 +123,26 @@ namespace ProyectoBadBoysAndGirls.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap bg22 {
+            get {
+                object obj = ResourceManager.GetObject("bg22", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap bg23 {
+            get {
+                object obj = ResourceManager.GetObject("bg23", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap boton {
             get {
                 object obj = ResourceManager.GetObject("boton", resourceCulture);
@@ -106,6 +156,36 @@ namespace ProyectoBadBoysAndGirls.Properties {
         internal static System.Drawing.Bitmap carita1 {
             get {
                 object obj = ResourceManager.GetObject("carita1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap empleados {
+            get {
+                object obj = ResourceManager.GetObject("empleados", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap escritorio_de_oficina {
+            get {
+                object obj = ResourceManager.GetObject("escritorio-de-oficina", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap lista_de_verificacion {
+            get {
+                object obj = ResourceManager.GetObject("lista-de-verificacion", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -166,6 +246,16 @@ namespace ProyectoBadBoysAndGirls.Properties {
         internal static System.Drawing.Bitmap sobresalir {
             get {
                 object obj = ResourceManager.GetObject("sobresalir", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap trabajo_en_equipo {
+            get {
+                object obj = ResourceManager.GetObject("trabajo-en-equipo", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

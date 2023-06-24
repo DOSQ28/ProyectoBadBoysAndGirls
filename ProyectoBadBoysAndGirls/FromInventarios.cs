@@ -27,6 +27,7 @@ namespace ProyectoBadBoysAndGirls
             txtId.Hide();
             BloqueBotones(true, false, true, true);
             BloqueoTextBox(false);
+            cbbusqueda();
         }
 
         private void MostrarGral()
@@ -34,6 +35,14 @@ namespace ProyectoBadBoysAndGirls
             // tableUSUS 3
             CP_Inventarios OCPG = new CP_Inventarios();
             dgv.DataSource = OCPG.MostrarAscendente();
+        }
+
+        void cbbusqueda() {
+            cbBusqueda.Items.Add("AUXILIAR");
+            cbBusqueda.Items.Add("COD_ENTIDAD");
+            cbBusqueda.Items.Add("DESCRIPCION");
+            cbBusqueda.Items.Add("ESTADO");
+            cbBusqueda.Items.Add("FECHA_INGRESO");
         }
 
         void usuario()
@@ -46,7 +55,7 @@ namespace ProyectoBadBoysAndGirls
         }
         public void GeneraQR()
         {
-            string txt = "";
+            string txt = txtAuxiliar.Text+"  " + txtCodigoEntidad.Text + "  " + txtCodigoAntiguo.Text + "  " + txtSerie.Text + "  " + txtDescripcion.Text + "  " + txtEstado.Text + "  " + txtEspecifica.Text + "  " +  txtProcedencia.Text+"  " + dtpFechadeIngreso.Value + "  " + txtObservacion.Text;
             if (txt != "")
             {
                 BarcodeWriter br = new BarcodeWriter();
@@ -268,6 +277,121 @@ namespace ProyectoBadBoysAndGirls
         {
             txtEmpNo.Text = dgvEmpleado.CurrentRow.Cells["CI"].Value.ToString() +"       "+ dgvEmpleado.CurrentRow.Cells["NOMBRE"].Value.ToString();
             idEmp = dgvEmpleado.CurrentRow.Cells["EMP_NO"].Value.ToString();
+        }
+
+        private void txtAuxiliar_TextChanged(object sender, EventArgs e)
+        {
+            GeneraQR();
+            txtAuxiliar.Text = txtAuxiliar.Text.ToUpper();
+            txtAuxiliar.Select(txtAuxiliar.Text.Length, 0);
+        }
+
+        private void txtEstado_TextChanged(object sender, EventArgs e)
+        {
+            GeneraQR();
+            txtEstado.Text = txtEstado.Text.ToUpper();
+            txtEstado.Select(txtEstado.Text.Length, 0);
+        }
+
+        private void txtDescripcion_TextChanged(object sender, EventArgs e)
+        {
+            GeneraQR();
+            txtDescripcion.Text = txtDescripcion.Text.ToUpper();
+            txtDescripcion.Select(txtDescripcion.Text.Length, 0);
+        }
+
+        private void txtObservacion_TextChanged(object sender, EventArgs e)
+        {
+            GeneraQR();
+            txtObservacion.Text = txtObservacion.Text.ToUpper();
+            txtObservacion.Select(txtObservacion.Text.Length, 0);
+        }
+
+        private void txtProcedencia_TextChanged(object sender, EventArgs e)
+        {
+            GeneraQR();
+            txtProcedencia.Text = txtProcedencia.Text.ToUpper();
+            txtProcedencia.Select(txtProcedencia.Text.Length, 0);
+        }
+
+        private void txtEspecifica_TextChanged(object sender, EventArgs e)
+        {
+            GeneraQR();
+            txtEspecifica.Text = txtEspecifica.Text.ToUpper();
+            txtEspecifica.Select(txtEspecifica.Text.Length, 0);
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void buscar_Click(object sender, EventArgs e)
+        {            
+            if (cbBusqueda.SelectedItem!=null)
+            {
+                if (cbBusqueda.SelectedItem.Equals("AUXILIAR"))
+                {
+                    dgv.DataSource = OCPG.Busqueda("%" + txtBuscaroficinas.Text + "%", "", "", "");
+                }
+                if (cbBusqueda.SelectedItem.Equals("COD_ENTIDAD"))
+                {
+                    dgv.DataSource = OCPG.Busqueda("", "%" + txtBuscaroficinas.Text + "%", "", "");
+                }
+                if (cbBusqueda.SelectedItem.Equals("DESCRIPCION"))
+                {
+                    dgv.DataSource = OCPG.Busqueda("", "", "%" + txtBuscaroficinas.Text + "%", "");
+                }
+                if (cbBusqueda.SelectedItem.Equals("ESTADO"))
+                {
+                    dgv.DataSource = OCPG.Busqueda("", "", "", "%" + txtBuscaroficinas.Text + "%");
+                }
+            }
+            else {
+                MessageBox.Show("Escoja Por que campo desa buscar en el Combo Box");
+                cbBusqueda.Focus();
+            }
+        }
+
+        private void txtBuscaroficinas_TextChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void txtAuxiliar_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(e.KeyChar >= 65 && e.KeyChar <= 90) && !(e.KeyChar >= 97 && e.KeyChar <= 122) && !(e.KeyChar == 32) && !(e.KeyChar == 8))
+            {
+                MessageBox.Show("Ingrese solo texto", "Atencion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                // si el valor es verdadero
+                e.Handled = true;
+                // retorna el valor en el parametro
+                return;
+            }
+        }
+
+        private void txtEstado_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(e.KeyChar >= 65 && e.KeyChar <= 90) && !(e.KeyChar >= 97 && e.KeyChar <= 122) && !(e.KeyChar == 32) && !(e.KeyChar == 8))
+            {
+                MessageBox.Show("Ingrese solo texto", "Atencion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                // si el valor es verdadero
+                e.Handled = true;
+                // retorna el valor en el parametro
+                return;
+            }
+        }
+
+        private void txtDescripcion_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(e.KeyChar >= 65 && e.KeyChar <= 90) && !(e.KeyChar >= 97 && e.KeyChar <= 122) && !(e.KeyChar == 32) && !(e.KeyChar == 8))
+            {
+                MessageBox.Show("Ingrese solo texto", "Atencion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                // si el valor es verdadero
+                e.Handled = true;
+                // retorna el valor en el parametro
+                return;
+            }
         }
 
         private void dgvEmpleado_CellContentClick(object sender, DataGridViewCellEventArgs e)

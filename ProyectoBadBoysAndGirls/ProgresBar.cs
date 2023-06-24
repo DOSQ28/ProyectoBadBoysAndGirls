@@ -12,9 +12,10 @@ namespace ProyectoBadBoysAndGirls
 {
     public partial class ProgresBar : Form
     {
+        Menu me = new ProyectoBadBoysAndGirls.Menu();        
         public ProgresBar()
         {
-            InitializeComponent();
+            InitializeComponent();            
         }
 
         private void ProgresBar_Load(object sender, EventArgs e)
@@ -25,7 +26,7 @@ namespace ProyectoBadBoysAndGirls
             cirprogres.Value = 0;
             cirprogres.Minimum = 0;
             cirprogres.Maximum = 100;
-            timer1.Start();
+            timer1.Start();            
         }
 
         private void timer2_Tick(object sender, EventArgs e)
@@ -34,19 +35,30 @@ namespace ProyectoBadBoysAndGirls
             if (this.Opacity == 0)
             {
                 timer2.Stop();
-                this.Close();
+                me.Show();
             }
+
         }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            if (this.Opacity < 1) this.Opacity += 0.05;
+            if (this.Opacity < 1) this.Opacity += 0.019;
             cirprogres.Value += 1;
             if (cirprogres.Value == 100)
             {
                 timer1.Stop();
-                timer2.Start();
-            }
+                timer2.Start();                
+            }                        
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void cirprogres_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -19,12 +19,13 @@ namespace ProyectoBadBoysAndGirls
         public index()
         {
             InitializeComponent();
-            
+            txtUsuario.Focus();
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-           
+            txtUsuario.Focus();
+            pnlogin.BackColor = Color.FromArgb(100, 0, 0, 0);        
         }
 
        
@@ -38,13 +39,13 @@ namespace ProyectoBadBoysAndGirls
         {
             if (log.VerificaLoggin(txtUsuario.Text, txtContraseña.Text))
             {
-                MessageBox.Show("Bienvenido al sistema de Activos Fijos", "Bad Boys And Girls", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+               // MessageBox.Show("Bienvenido al sistema de Activos Fijos", "Bad Boys And Girls", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 FromEmpleados fm = new FromEmpleados();
                 FromUsuarios u = new FromUsuarios();
                 FromOficina o = new FromOficina();
                 FromPartidas p = new FromPartidas();
-                p.Show();
-                //fm.ShowDialog();// muestra y no se cierra
+                ProgresBar me = new ProgresBar();                
+                me.Show();
                 this.Hide();// oculta
             }
             else {
@@ -55,6 +56,16 @@ namespace ProyectoBadBoysAndGirls
         private void exit_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtUsuario_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

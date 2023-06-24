@@ -50,7 +50,7 @@ namespace ProyectoBadBoysAndGirls
         }
         public void GeneraQR()
         {
-            string txt = txtNombre.Text;
+            string txt = txtCi.Text+"   "+txtNombre.Text + "   " + txtCargo.Text + "   " + txtUnidad.Text + "   " + txtAreadeTrabajo.Text + "   " + txtCelular.Text + "   " + txtProfesion.Text;
             if (txt != "")
             {
                 BarcodeWriter br = new BarcodeWriter();
@@ -409,6 +409,11 @@ namespace ProyectoBadBoysAndGirls
             txtUnidad.Text = txtUnidad.Text.ToUpper();
             txtUnidad.Select(txtUnidad.Text.Length, 0);
             GeneraQR();
+        }
+
+        private void exit_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

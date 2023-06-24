@@ -16,7 +16,7 @@ namespace ProyectoBadBoysAndGirls
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FromInventarios());
+            Application.Run(new index());
         }
     }
 }
