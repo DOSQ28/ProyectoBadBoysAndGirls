@@ -17,7 +17,7 @@ namespace ProyectoBadBoysAndGirls
     {
         CP_Inventarios OCPG = new CP_Inventarios();
         // creo q es para editar
-        private string id = null;
+        private string id = null, idEmp=null;
         //para el metodo de adicion
         private bool Editar = false;
         public FromInventarios()
@@ -113,8 +113,8 @@ namespace ProyectoBadBoysAndGirls
         }
         private void btnNuevo_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(dtpFechadeIngreso.Value+"");
-            MessageBox.Show(OCPG.RecuperaFecha(txtId.Text)+"");
+//            MessageBox.Show(dtpFechadeIngreso.Value+"");
+  //          MessageBox.Show(OCPG.RecuperaFecha(txtId.Text)+"");
             Editar = false;
             BloqueoTextBox(true);
             limpia();
@@ -127,14 +127,13 @@ namespace ProyectoBadBoysAndGirls
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            //string usu = Convert.ToString(txtEmpNo.SelectedItem);
-            //usu = usu.Substring(0, usu.IndexOf('|'));            
+            string usu = Convert.ToString(cbPartida.SelectedItem);
+            usu = usu.Substring(0, usu.IndexOf('|'));            
             if (Editar == false)
             {
                 try
-                {
-
-                    //OCPG.Insertar(txtAuxiliar.Text, txtPartida.Text, txtCodigoEntidad.Text, txtCodigoAntiguo.Text, txtSerie.Text, txtDescripcion.Text, txtEstado.Text, txtEspecifica.Text,usu, txtProcedencia.Text, dtpFechadeIngreso.Text, txtObservacion.Text);
+                {                    
+                    OCPG.Insertar(txtAuxiliar.Text, usu, txtCodigoEntidad.Text, txtCodigoAntiguo.Text, txtSerie.Text, txtDescripcion.Text, txtEstado.Text, txtEspecifica.Text,idEmp, txtProcedencia.Text, dtpFechadeIngreso.Value, txtObservacion.Text);
                     MessageBox.Show("Se registro correctamente ", "Bad Boys And Girls", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     MostrarGral();
                     limpia();
@@ -149,7 +148,7 @@ namespace ProyectoBadBoysAndGirls
             {
                 try
                 {
-                   // OCPG.Editar(txtAuxiliar.Text, txtPartida.Text, txtCodigoEntidad.Text, txtCodigoAntiguo.Text, txtSerie.Text, txtDescripcion.Text, txtEstado.Text, txtEspecifica.Text, usu, txtProcedencia.Text, dtpFechadeIngreso.Text, txtObservacion.Text, txtId.Text);
+                    OCPG.Editar(txtAuxiliar.Text, usu, txtCodigoEntidad.Text, txtCodigoAntiguo.Text, txtSerie.Text, txtDescripcion.Text, txtEstado.Text, txtEspecifica.Text, usu, txtProcedencia.Text, dtpFechadeIngreso.Value, txtObservacion.Text, txtId.Text);
                     MessageBox.Show("Se modifico correctamente ", "Bad Boys And Girls", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     MostrarGral();
                     limpia();
@@ -166,13 +165,15 @@ namespace ProyectoBadBoysAndGirls
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
-            usuario();
+            
             if (dgv.SelectedRows.Count > 0)
             {
+                comboBox();
                 Editar = true;
                 // para recuperar en el combo box              
                 txtAuxiliar.Text = dgv.CurrentRow.Cells["AUXILIAR"].Value.ToString();
-                //txtPartida.Text = dgv.CurrentRow.Cells["PARTIDA"].Value.ToString();
+                CP_Partida cbpart = new CP_Partida();
+                cbPartida.SelectedItem = cbpart.RUF(dgv.CurrentRow.Cells["PARTIDA"].Value.ToString());                
                 txtCodigoEntidad.Text = dgv.CurrentRow.Cells["COD_ENTIDAD"].Value.ToString();
                 txtCodigoAntiguo.Text = dgv.CurrentRow.Cells["COD_ANTIGUO"].Value.ToString();
                 txtSerie.Text = dgv.CurrentRow.Cells["SERIE"].Value.ToString();
@@ -180,9 +181,11 @@ namespace ProyectoBadBoysAndGirls
                 txtEstado.Text = dgv.CurrentRow.Cells["ESTADO"].Value.ToString();
                 txtEspecifica.Text = dgv.CurrentRow.Cells["ESPECIFICA"].Value.ToString();                
                 txtProcedencia.Text = dgv.CurrentRow.Cells["PROCEDENCIA"].Value.ToString();
-                dtpFechadeIngreso.Text = dgv.CurrentRow.Cells["FECHA_INGRESO"].Value.ToString();
-                txtObservacion.Text = dgv.CurrentRow.Cells["OBSERVACION"].Value.ToString();                                
-                txtEmpNo.Text= dgv.CurrentRow.Cells["EMP_NO"].Value.ToString();
+                DateTime fe = OCPG.RecuperaFecha(txtId.Text);
+                dtpFechadeIngreso.Value = fe;// dgv.CurrentRow.Cells["FECHA_INGRESO"].Value.ToString();
+                txtObservacion.Text = dgv.CurrentRow.Cells["OBSERVACION"].Value.ToString();
+                CP_Empleados emp = new CP_Empleados();
+                txtEmpNo.Text = emp.RUF(dgv.CurrentRow.Cells["EMP_NO"].Value.ToString());
                 txtId.Text = dgv.CurrentRow.Cells["INV_NO"].Value.ToString();
             }
             else
@@ -264,6 +267,12 @@ namespace ProyectoBadBoysAndGirls
         private void REmp(object sender, DataGridViewCellEventArgs e)
         {
             txtEmpNo.Text = dgvEmpleado.CurrentRow.Cells["CI"].Value.ToString() +"       "+ dgvEmpleado.CurrentRow.Cells["NOMBRE"].Value.ToString();
+            idEmp = dgvEmpleado.CurrentRow.Cells["EMP_NO"].Value.ToString();
+        }
+
+        private void dgvEmpleado_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

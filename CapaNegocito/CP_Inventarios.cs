@@ -20,21 +20,24 @@ namespace CapaNegocito
         }
 
         // DE TIPO STRING TODO POR LO COMBOBOXS
-        public void Insertar(string aux, string part, string ce, string ca, string des, string es, string esp, string emp, string proc, string fe, string obs)
+        public void Insertar(string aux, string part, string ce, string ca,string se, string des, string es, string esp, string emp, string proc, DateTime fe, string obs)
         {
-            OCD.InsertarP(aux, part, ce, ca, des, es, esp, emp, proc, Convert.ToDateTime(fe), obs);
+            OCD.InsertarP(aux, part, ce, ca,se, des, es, esp, emp, proc, Convert.ToDateTime(fe), obs);
         }
 
-        public void Editar(string aux, string part, string ce, string ca, string des, string es, string esp, string emp, string proc, string fe, string obs, string id)
+        public void Editar(string aux, string part, string ce, string ca,string se, string des, string es, string esp, string emp, string proc, DateTime fe, string obs, string id)
         {
-            OCD.EditarP(aux, part, ce, ca, des, es, esp, emp, proc, Convert.ToDateTime(fe), obs,id);
+            OCD.EditarP(aux, part, ce, ca, se,des, es, esp, emp, proc, Convert.ToDateTime(fe), obs,id);
         }
 
         public void Eliminar(string id)
         {
             OCD.Eliminar(id);
         }
-
+        public int Id(string id)
+        {
+            return OCD.id();
+        }
 
         public DataTable MostrarAscendente()
         {

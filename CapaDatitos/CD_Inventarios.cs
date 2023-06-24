@@ -72,16 +72,33 @@ namespace CapaDatitos
             conn.CerrarConexion();
             return cb;
         }
-        public void InsertarP(string aux, string part, string ce, string ca, string des, string es, string esp, string emp, string proc, DateTime fe,string obs)
+
+        public int id()
         {
+            int cod = 0;
+            //transac sql            
+            comando.Connection = conn.AbrirConexion();
+            comando.CommandText = "SELECT MAX(CONVERT(INT,SUBSTRING(I.INV_NO,4,LEN(I.INV_NO))))+1 as CODIGO FROM INVENTARIOS I";
+            leer = comando.ExecuteReader();
+            if (leer.Read())
+            {
+                cod = Convert.ToInt16(leer["CODIGO"]);
+            }
+            conn.CerrarConexion();
+            return cod;
+        }
+        public void InsertarP(string aux, string part, string ce, string ca,string se, string des, string es, string esp, string emp, string proc, DateTime fe,string obs)
+        {
+            int isa = id();
             // PARA EL PROCEDIMIENTO
             comando.Connection = conn.AbrirConexion();
-            comando.CommandText = "INSERT_INVENTARIOS";
-            comando.CommandType = CommandType.StoredProcedure;
+            comando.CommandText = "INSERT INTO INVENTARIOS VALUES(CONCAT('AF-',"+isa+"),'"+aux+"','"+part+"','"+ce+"','"+ca+"','"+ce+"','"+des+"','"+es+"','"+esp+"','"+emp+"','"+proc+"',CAST('"+fe+"' AS datetime),'"+obs+"');";
+            /*comando.CommandType = CommandType.StoredProcedure;
             comando.Parameters.AddWithValue("@AUXILIAR", aux);
             comando.Parameters.AddWithValue("@PARTIDA", part);
             comando.Parameters.AddWithValue("@COD_ENTIDAD", ce);
             comando.Parameters.AddWithValue("@COD_ANTIGUO", ca);
+            comando.Parameters.AddWithValue("@SERIE", se);
             comando.Parameters.AddWithValue("@DESCRIPCION", des);
             comando.Parameters.AddWithValue("@ESTADO", es);
             comando.Parameters.AddWithValue("@ESPECIFICA", esp);
@@ -89,22 +106,25 @@ namespace CapaDatitos
             comando.Parameters.AddWithValue("@PROCEDENCIA", proc);
             comando.Parameters.AddWithValue("@FECHA_INGRESO",fe);
             comando.Parameters.AddWithValue("@OBSERVACION", obs);
+            */
             // Y ASI SUCESIVAMENTE
             comando.ExecuteNonQuery();
             //buffer
             comando.Parameters.Clear();
         }
 
-        public void EditarP(string aux, string part, string ce, string ca, string des, string es, string esp, string emp, string proc, DateTime fe, string obs, String id)
+        public void EditarP(string aux, string part, string ce, string ca, string se,string des, string es, string esp, string emp, string proc, DateTime fe, string obs, String id)
         {
             // PARA EL PROCEDIMIENTO
             comando.Connection = conn.AbrirConexion();
-            comando.CommandText = "UPDATE_INVENTARIOS";
+            comando.CommandText = "UPDATE INVENTARIOS SET AUXILIAR='"+aux+"',PARTIDA='"+part+"',COD_ENTIDAD='"+ce+"',COD_ANTIGUO='"+ca+"',SERIE='"+se+"',DESCRIPCION='"+des+"',ESTADO='"+es+ "',ESPECIFICA='"+esp+"',EMP_NO='"+emp+"',PROCEDENCIA='"+proc+ "',FECHA_INGRESO=CAST('" + fe + "' AS datetime),OBSERVACION='" + obs+"' WHERE INV_NO='"+id+"'";
+            /*
             comando.CommandType = CommandType.StoredProcedure;
             comando.Parameters.AddWithValue("@AUXILIAR", aux);
             comando.Parameters.AddWithValue("@PARTIDA", part);
             comando.Parameters.AddWithValue("@COD_ENTIDAD", ce);
             comando.Parameters.AddWithValue("@COD_ANTIGUO", ca);
+            comando.Parameters.AddWithValue("@SERIE", se);
             comando.Parameters.AddWithValue("@DESCRIPCION", des);
             comando.Parameters.AddWithValue("@ESTADO", es);
             comando.Parameters.AddWithValue("@ESPECIFICA", esp);
@@ -113,6 +133,7 @@ namespace CapaDatitos
             comando.Parameters.AddWithValue("@FECHA_INGRESO", fe);
             comando.Parameters.AddWithValue("@OBSERVACION", obs);
             comando.Parameters.AddWithValue("@id", id);
+            */
             comando.ExecuteNonQuery();
             // buffer
             comando.Parameters.Clear();

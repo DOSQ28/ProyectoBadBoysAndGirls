@@ -994,6 +994,7 @@
             this.dgvEmpleado.Size = new System.Drawing.Size(260, 101);
             this.dgvEmpleado.TabIndex = 311;
             this.dgvEmpleado.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.REmp);
+            this.dgvEmpleado.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEmpleado_CellContentClick);
             // 
             // FromInventarios
             // 
