@@ -54,6 +54,7 @@ namespace ProyectoBadBoysAndGirls
         private void panel2_Paint(object sender, PaintEventArgs e)
         {
 
+
         }
 
         private void cirprogres_Click(object sender, EventArgs e)

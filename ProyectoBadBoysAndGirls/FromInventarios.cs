@@ -394,6 +394,20 @@ namespace ProyectoBadBoysAndGirls
             }
         }
 
+        private void gunaButton1_Click(object sender, EventArgs e)
+        {
+            //btn guardar
+            SaveFileDialog sfd = new SaveFileDialog();
+            {
+                sfd.Filter = "Imagen png|*.png";
+                sfd.InitialDirectory = @"C:\Descargas\Codigos Barra";
+            }
+            if (sfd.ShowDialog() == DialogResult.OK)
+            {
+                pbGuardar.Image.Save(sfd.FileName);
+            }
+        }
+
         private void dgvEmpleado_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
